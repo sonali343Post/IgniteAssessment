@@ -10,12 +10,12 @@ import io.restassured.response.Response;
 public class APIAutomationTest {
     String baseURI = "https://reqres.in";
     @Test
-    public void getApiAutoTest() {
+    public void getUserTest() {
         Response response = given().contentType(ContentType.JSON).baseUri(baseURI).when().get("/api/users/2");
         Assert.assertEquals(response.statusCode(), 200);
     }
     @Test
-    public void PostApiAutoTest() {
+    public void postUserTest() {
         Response response = given().contentType(ContentType.JSON).baseUri(baseURI).body("{\r\n"
                 + "    \"name\": \"Suraj\",\r\n"
                 + "    \"job\": \"QA\"\r\n"
@@ -24,7 +24,7 @@ public class APIAutomationTest {
         Assert.assertEquals(response.statusCode(), 201);
     }
     @Test
-    public void putApiAutoTest() {
+    public void putUserTest() {
         Response response = given().contentType(ContentType.JSON).baseUri(baseURI).body("{\r\n"
                 + "    \"name\": \"Suraj\",\r\n"
                 + "    \"job\": \"VV Residental\"\r\n"
@@ -35,7 +35,7 @@ public class APIAutomationTest {
         System.out.println(js.get("name").toString());
     }
     @Test
-    public void deletApiAutoTest() {
+    public void deletUserTest() {
         Response response = given().contentType(ContentType.JSON).baseUri(baseURI).when().delete("/api/users/2");
         System.out.println(response.asString());
         Assert.assertEquals(response.statusCode(), 204);

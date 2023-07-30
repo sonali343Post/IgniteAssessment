@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 public class UIAutomationTest {
     @Test
-    public void verifyAppleIphone() {
+    public void verifyAppleIphoneTest() {
         try {
             WebDriverManager.edgedriver().setup();
             WebDriver driver = new EdgeDriver();
